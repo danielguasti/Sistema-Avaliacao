@@ -18,6 +18,7 @@ class Avaliacao {
         this.grupoDestino = grupoDestino;
     }
 
+    
 
 }
 

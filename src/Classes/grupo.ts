@@ -16,6 +16,9 @@ class Grupo {
         this.componentes.push(lider);
     }
 
+    adicionarAluno(aluno: Aluno): void {
+        this.componentes.push(aluno);
+    }
 
 }
 
