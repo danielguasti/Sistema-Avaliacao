@@ -1,4 +1,5 @@
-# Sistema-Avaliacao
+# Trabalho De POO2 Sistema de avaliação inova
 
-## Trabalho realizado por Marcos Daniel Guasti Machado, turma CC4M.
+## Grupo: Marcos Daniel Guasti Machado, Vladimir Gama Batista, Yan Zumerle Rangel
+
 
