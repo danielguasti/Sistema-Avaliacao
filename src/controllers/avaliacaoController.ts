@@ -13,7 +13,7 @@ class avaliacaoController{
             const novoAvaliacao = await avaliacaoService.criarAvaliacao(dados)
             res.status(200).json({
                 status: 'ok',
-                novoleilao: novoAvaliacao
+                novoGrupo: novoAvaliacao
             });
         }else{
             res.status(400).json({
@@ -29,13 +29,14 @@ class avaliacaoController{
 
         res.status(200).json({
             status: 'ok',
-            usuarios: avaliacoes
+            avaliacoes: avaliacoes
         })
     }
 
     async updateAvalicao(req: Request, res: Response){
         const dados: Prisma.AvaliacaoCreateInput = req.body;
-        const avaliacao = avaliacaoService.atualizarAvaliacao
+        const id: number = req.body
+        const avaliacao = avaliacaoService.atualizarAvaliacao(id, dados);
 
         res.status(200).json({
             status: 'ok',
@@ -44,8 +45,8 @@ class avaliacaoController{
     }
 
     async deleteAvaliacao(req: Request, res: Response){
-        const dados: Prisma.AvaliacaoCreateInput = req.body;
-        const avaliacao = avaliacaoService.deletarAvaliacao
+        const id: number = req.body;
+        const avaliacao = avaliacaoService.deletarAvaliacao(id);
 
         res.status(200).json({
             status: 'ok',

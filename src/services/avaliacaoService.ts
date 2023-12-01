@@ -28,7 +28,7 @@ async listarAvaliacao(id?: number) {
 }
 
 async criarAvaliacao(avaliacao: Prisma.AvaliacaoCreateInput){
-
+    
     try{
         const novoAvaliacao = await prisma.avaliacao.create({
             data: avaliacao

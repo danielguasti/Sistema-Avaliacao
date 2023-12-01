@@ -57,6 +57,21 @@ async atualizarAluno(id: number, aluno: Prisma.AlunoUpdateInput){
     }
 }
 
+async avaliacoesFeitas(id: number) {
+    try{
+        const listarAvaliacoes = await prisma.aluno.findMany({
+            where: ({
+                id
+            })
+        })
+    } catch(error){
+        console.log(error);
+        return null;
+    }
+}
+
+
+
 async deletarAluno(id: number){
     try{
         const deletarAluno = await prisma.aluno.delete({

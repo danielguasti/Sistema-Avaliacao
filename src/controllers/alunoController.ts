@@ -13,7 +13,7 @@ class alunoController{
             const novoAluno = await alunoService.criarAluno(dados)
             res.status(200).json({
                 status: 'ok',
-                novoleilao: novoAluno
+                novoAluno: novoAluno
             });
         }else{
             res.status(400).json({
@@ -29,13 +29,24 @@ class alunoController{
 
         res.status(200).json({
             status: 'ok',
-            usuarios: alunos
+            alunos: alunos
+        })
+    }
+
+    async avaliacoesFeitas(req: Request, res: Response){
+        const id: number = req.body;
+        const avaliacoes = alunoService.avaliacoesFeitas(id);
+
+        res.status(200).json({
+            status: 'ok',
+            avaliacoes: avaliacoes
         })
     }
 
     async updateAlunos(req: Request, res: Response){
         const dados: Prisma.AlunoCreateInput = req.body;
-        const aluno = alunoService.atualizarAluno
+        const id: number = req.body;
+        const aluno = alunoService.atualizarAluno(id, dados);
 
         res.status(200).json({
             status: 'ok',
@@ -44,8 +55,8 @@ class alunoController{
     }
 
     async deleteAlunos(req: Request, res: Response){
-        const dados: Prisma.AlunoCreateInput = req.body;
-        const aluno = alunoService.deletarAluno
+        const id: number = req.body;
+        const aluno = alunoService.deletarAluno(id)
 
         res.status(200).json({
             status: 'ok',
