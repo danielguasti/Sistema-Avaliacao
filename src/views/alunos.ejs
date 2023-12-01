@@ -29,7 +29,7 @@
 </head>
 
 <body style="display: flex; align-items: center ; justify-content: center; flex-direction: column">
-    <h1>Lista de usuários</h1>
+    <h1>Lista de alunos</h1>
     <table>
         <thead>
             <th>ID</th>
@@ -41,13 +41,13 @@
             <% for(var i=0; i < users.length; i++) { %>
                 <tr>
                     <td>
-                        <%= users[i].id %>
+                        <%= alunos[i].matricula %>
                     </td>
                     <td>
-                        <%= users[i].name %>
+                        <%= alunos[i].name %>
                     </td>
                     <td>
-                        <%= users[i].email %>
+                        <%= alunos[i].email %>
                     </td>
                     <td><button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-user-plus"></i></button>
                         <button class="btn"><i class="fa fa-user-times"></i></button>
